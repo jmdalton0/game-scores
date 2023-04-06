@@ -1,26 +1,48 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <header class="header">
+    <h1>Game Scores</h1>
+
+    <fa-icon
+      icon="fa-solid fa-bars"
+      class="btn fixed right"
+      size="6x"
+      @click="showGameSelect = true"
+    ></fa-icon>
+
+    <GameSelect
+      v-if="showGameSelect"
+      @close="selectGame"
+    ></GameSelect>
+  </header>
+
+  <main>
+    <h3>{{ game }}</h3>
+    <Hearts v-if="game === 'hearts'"/>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import GameSelect from './components/dialogs/GameSelect.vue';
+import Hearts from './components/games/hearts/Hearts.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    GameSelect,
+    Hearts,
+  },
+  data() {
+    return {
+      clear: false,
+      game: '',
+      showGameSelect: false,
+    }
+  },
+  methods: {
+    selectGame(game) {
+      this.game = game;
+      this.showGameSelect = false;
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

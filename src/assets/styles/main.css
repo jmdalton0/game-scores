@@ -1,0 +1,62 @@
+@import './reset.css';
+@import './buttons.css';
+
+:root {
+    --text: #222;
+    --text-light: #eee;
+    --disabled: #ccc;
+    --disabled-dark: #666;
+    --prim-dark: #1D303B;
+    --prim: #3D647A;
+    --prim-light: #63A2C7;
+    --green: #0CCC4C;
+}
+
+html {
+    color: var(--text-light);
+}
+
+body {
+    background-color: var(--prim);
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    padding: 1rem;
+}
+
+h3 {
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 4em;
+    color: var(--text);
+    background-color: var(--text-light);
+    border: 0;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--prim-dark);
+    border-bottom: 1px solid var(--text-light);
+}
+
+.game {
+    padding: 1rem;
+    background-color: var(--prim-light); 
+    border-radius: 0.5rem;
+}
