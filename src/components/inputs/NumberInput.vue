@@ -107,7 +107,7 @@ export default {
     margin: 0;
     padding: 0 1rem;
     font-size: 2rem;
-    color: var(--disabled-dark);
+    color: var(--secondary-dark);
     background-color: var(--disabled);
 }
 
@@ -135,7 +135,7 @@ export default {
 }
 
 .number-col:hover {
-    background-color: var(--green);
+    background-color: var(--secondary);
 }
 
 .number {

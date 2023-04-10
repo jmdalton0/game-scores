@@ -17,10 +17,8 @@
         @click="showAddScore = true"
         class="player"
     >
-        <div class="name">
-            <h5>{{ name }}</h5>
-            <h5>{{ score }}</h5>
-        </div>
+        <h4>{{ name }}</h4>
+        <h5>{{ score }}</h5>
     </div>
 
     <AddPlayerDialog
@@ -30,7 +28,7 @@
 
     <AddScoreDialog
         v-if="showAddScore"
-        :name="name"
+        :name="name.split(' ').at(0)"
         @close="addScore"
     />
 </template>
@@ -51,20 +49,24 @@ export default {
             score: 0,
             showAddPlayer: false,
             showAddScore: false,
+            removeToast: false,
         }
     },
+    emits: ['playerAdded', 'scoreAdded'],
     methods: {
         addPlayer(name) {
             if (name) {
                 this.name = name;
             }
             this.showAddPlayer = false;
+            this.$emit('playerAdded');
         },
         addScore(score) {
             if (score) {
                 this.score += score;
             }
             this.showAddScore = false;
+            this.$emit('scoreAdded', score);
         }
     },
     props: {
@@ -74,6 +76,11 @@ export default {
 </script>
 
 <style scoped>
+h4 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
 h5 {
     font-size: 2rem;
     text-align: center;
@@ -81,10 +88,12 @@ h5 {
 
 .player {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: calc(50% - 0.5rem);
     height: 7rem;
+    padding: 0.5rem;
     background-color: var(--prim);
     border-radius: 0.5rem;
 }

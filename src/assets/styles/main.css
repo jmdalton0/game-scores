@@ -5,11 +5,11 @@
     --text: #222;
     --text-light: #eee;
     --disabled: #ccc;
-    --disabled-dark: #666;
-    --prim-dark: #1D303B;
-    --prim: #3D647A;
-    --prim-light: #63A2C7;
-    --green: #0CCC4C;
+    --prim-dark: #121012;
+    --prim: #302C30;
+    --prim-light: #776C78;
+    --secondary: #DC9631;
+    --secondary-dark: #614115;
 }
 
 html {

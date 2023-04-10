@@ -19,7 +19,8 @@ export default {
     name: "DialogComponent",
     props: {
         header: String,
-    }
+    },
+    emits: ['close']
 }
 </script>
 

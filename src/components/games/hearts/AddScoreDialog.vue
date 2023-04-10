@@ -25,6 +25,7 @@ export default {
     props: {
         name: String,
     },
+    emits: ['close'],
     methods: {
         add() {
             this.$emit('close', this.score);
