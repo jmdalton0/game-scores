@@ -5,9 +5,9 @@ import './assets/styles/main.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faBars, faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark, faPlus, faRotateLeft } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faBars, faXmark, faPlus);
+library.add(faBars, faXmark, faPlus, faRotateLeft);
 
 const app = createApp(App);
 

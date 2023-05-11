@@ -20,7 +20,6 @@ export default {
     props: {
         header: String,
     },
-    emits: ['close']
 }
 </script>
 

@@ -48,7 +48,9 @@ export default {
   },
   methods: {
     selectGame(game) {
-      this.game = game;
+      if (game) {
+        this.game = game;
+      }
       this.showGameSelect = false;
     }
   },

@@ -46,7 +46,6 @@ export default {
     data() {
         return {
             name: '',
-            score: 0,
             showAddPlayer: false,
             showAddScore: false,
             removeToast: false,
@@ -61,16 +60,15 @@ export default {
             this.showAddPlayer = false;
             this.$emit('playerAdded');
         },
-        addScore(score) {
-            if (score) {
-                this.score += score;
-            }
+        addScore(toAdd) {
+            toAdd = toAdd ? toAdd : 0;
             this.showAddScore = false;
-            this.$emit('scoreAdded', score);
+            this.$emit('scoreAdded', this.id, toAdd);
         }
     },
     props: {
         id: Number,
+        score: Number,
     }
 }
 </script>
