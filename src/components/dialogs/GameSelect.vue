@@ -1,15 +1,17 @@
 <template>
     <Dialog :header="'Select a Game'">
         <ul>
-            <li @click="select('hearts')">
-                Hearts
-            </li>
             <li @click="select('blackout')">
                 Blackout
             </li>
+            <li @click="select('hearts')">
+                Hearts
+            </li>
+            <!--
             <li @click="select('spades')">
                 Spades
             </li>
+            -->
         </ul>
     </Dialog>
 </template>

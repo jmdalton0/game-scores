@@ -36,12 +36,21 @@
         </div>
         <div class="btn-row">
             <button
+                class="btn-small"
+                @click="runHand"
+            >
+                R
+            </button>
+
+            <button
+                class="btn-large"
                 :disabled="remainingPoints != 0"
                 @click="nextHand"
             >Next Hand</button>
+
             <button
                 class="btn-small"
-                @click="resetHand"
+                @click="undoHand"
             >
                 <fa-icon
                     id="rotate-left-icon"
@@ -63,7 +72,7 @@
     </div>
 </template>
 
-<script scoped>
+<script>
 import Player from './Player.vue';
 import Toast from './../../dialogs/Toast.vue';
 
@@ -99,11 +108,17 @@ export default {
         },
         resetHand() {
             this.remainingPoints = 26;
+        },
+        runHand() {
+
+        },
+        undoHand() {
+            this.resetHand();
             this.scores = [...this.oldScores];
         },
         nextHand() {
+            this.resetHand();
             this.oldScores = [...this.scores];
-            this.remainingPoints = 26;
             switch (this.pass) {
                 case "Left":
                     this.pass = "Right";
@@ -161,6 +176,9 @@ h4 {
 
 .btn-small {
     width: 15%;
-    margin-left: 1rem;
+}
+
+.btn-large {
+    margin: 1rem 1rem 0 1rem;
 }
 </style>
